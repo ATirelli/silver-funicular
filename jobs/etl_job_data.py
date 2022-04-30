@@ -55,8 +55,6 @@ def transform_data(data_df):
     :return: Transformed DataFrame.
     """
     transformed_data_df = data_df.withColumn("timestamp", to_timestamp(data_df.timestamp))
-    transformed_data_df = (transformed_data_df
-                           .withColumn("timestamp", date_trunc('second', transformed_data_df.timestamp)))
     transformed_data_df = transformed_data_df.where(datediff(col('received'), col('timestamp')) <= 1)
     transformed_data_df = transformed_data_df.dropDuplicates(['device', 'timestamp'])
 
