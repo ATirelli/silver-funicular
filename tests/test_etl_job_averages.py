@@ -81,8 +81,6 @@ class SparkETLAveragesTests(unittest.TestCase):
                                    .withColumn("month", (to_date(expected_averages_month.month, 'yyyy-MM'))))
         expected_averages_month = (expected_averages_month
                                    .withColumn("month", (date_format(col('month'), 'yyyy-MM'))))
-        expected_averages_month.show()
-        averages_month.show()
         expected_area_cols = len(expected_averages_area.columns)
         expected_area_rows = expected_averages_area.count()
 
