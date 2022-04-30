@@ -2,5 +2,7 @@
   "landing_zone_path": "/Users/andreatirelli/Library/Mobile Documents/com~apple~CloudDocs/Jobs/Camlin/silver-funicular/data/landing_zone",
   "data_lake_path": "/Users/andreatirelli/Library/Mobile Documents/com~apple~CloudDocs/Jobs/Camlin/silver-funicular/data/datalake",
   "partitioning_column_devices": "area",
-  "partitioning_column_data_devices": "timestamp"
+  "partitioning_column_data_devices": "timestamp",
+  "device_table": "raw_devices",
+  "data_device_table": "cleansed_data_devices"
 }
