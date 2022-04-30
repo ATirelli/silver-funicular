@@ -66,7 +66,7 @@ class SparkETLDataTests(unittest.TestCase):
         field_list = lambda fields: (fields.name, fields.dataType, fields.nullable)
         fields1 = [*map(field_list, transformed_data.schema.fields)]
         fields2 = [*map(field_list, expected_data.schema.fields)]
-        # Compare schema of transformed_df and expected_df
+
         res = set(fields1) == set(fields2)
 
         # assert

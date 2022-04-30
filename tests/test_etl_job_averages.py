@@ -15,7 +15,7 @@ from dependencies.spark import start_spark
 from jobs.etl_job_averages import transform_data
 
 
-class SparkETLDataTests(unittest.TestCase):
+class SparkETLAveragesTests(unittest.TestCase):
     """Test suite for transformation in etl_job_data.py
     """
 
@@ -94,7 +94,7 @@ class SparkETLDataTests(unittest.TestCase):
         fields2_area_exptected = [*map(field_list, expected_averages_area.schema.fields)]
         fields1_month = [*map(field_list, averages_month.schema.fields)]
         fields2_month_exptected = [*map(field_list, expected_averages_month.schema.fields)]
-        # Compare schema of transformed_df and expected_df
+
         res_area = set(fields1_area) == set(fields2_area_exptected)
         res_month = set(fields1_month) == set(fields2_month_exptected)
 
