@@ -19,26 +19,11 @@ def start_spark(app_name='my_spark_app', master='local[*]', jar_packages=[],
                 files=[], spark_config={}):
     """Start Spark session, get Spark logger and load config files.
 
-    Start a Spark session on the worker node and register the Spark
-    application with the cluster. Note, that only the app_name argument
-    will apply when this is called from a script sent to spark-submit.
-    All other arguments exist solely for testing the script from within
-    an interactive Python console.
-
-    This function also looks for a file ending in 'config.json' that
-    can be sent with the Spark job. If it is found, it is opened,
-    the contents parsed (assuming it contains valid JSON for the ETL job
-    configuration) into a dict of ETL job configuration parameters,
-    which are returned as the last element in the tuple returned by
-    this function. If the file cannot be found then the return tuple
-    only contains the Spark session and Spark logger objects and None
-    for config.
-
     The function checks the enclosing environment to see if it is being
     run from inside an interactive console session or from an
     environment which has a `DEBUG` environment variable set (e.g.
     setting `DEBUG=1` as an environment variable as part of a debug
-    configuration within an IDE such as Visual Studio Code or PyCharm.
+    configuration within an IDE.
     In this scenario, the function uses all available function arguments
     to start a PySpark driver from the local PySpark package as opposed
     to using the spark-submit and Spark cluster defaults. This will also
@@ -100,7 +85,6 @@ def start_spark(app_name='my_spark_app', master='local[*]', jar_packages=[],
             config_dict = json.load(config_file)
         spark_logger.warn('loaded config from ' + config_files[0])
     else:
-        spark_logger.warn('no config file found')
         config_dict = None
 
     return spark_sess, spark_logger, config_dict
