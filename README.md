@@ -34,10 +34,10 @@ root/
  |-- tests/
  |   |-- test_etl_job_averages.py
  |   |-- test_etl_job_data.py
- |   build_dependencies.sh
- |   packages.zip
- |   Pipfile
- |   Pipfile.lock
+ |-- build_dependencies.sh
+ |-- packages.zip
+ |-- Pipfile
+ |-- Pipfile.lock
 ```
 
 The main Python modules containing the ETL jobs (which will be sent to the Spark cluster), 
