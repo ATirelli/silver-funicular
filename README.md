@@ -1,4 +1,4 @@
-# PySpark Example Project
+# silver-funicular: ETL with PySpark
 
 This repository contains the code implementing an ETL pipeline using Apacke Spark 
 and its Python API, PySpark. In what follows we shall provide details regarding: 
@@ -99,8 +99,7 @@ jobs/etl_job_data.py
 
 
 Given that we have chosen to structure our ETL jobs in such a way as to isolate the 'Transformation' step into its own function, we feed it a small slice of 'real-world' production data that is generated on-the-fly and check it against known results (e.g. computed manually or interactively within a Python interactive console session).
-
-To execute the example unit test for this project run the `bash` script `launch_tests.sh`.
+To execute the example unit tests for this project run the `bash` script `launch_tests.sh`.
 
 ## Possible Improvements
 Some possible improvements of the present implementations are as follows:
