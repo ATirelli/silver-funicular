@@ -17,7 +17,7 @@ folder.
 The project structure is the following:
 
 ```bash
-root/
+silver-funicular/
  |-- configs/
  |   |-- etl_config.json
  |-- data/
@@ -102,7 +102,7 @@ Given that we have chosen to structure our ETL jobs in such a way as to isolate 
 To execute the example unit tests for this project run the `bash` script `launch_tests.sh`.
 
 ## Continuous Integration
-A simple continuous integration suite has been added using [Github Actions](https://github.com/features/actions).
+A simple continuous integration suite has been added using [Github Actions](https://github.com/features/actions): the CI workflow is contained in the `.github/workflow/action.yml` file.
 
 ## Possible Improvements
 Some possible improvements of the present implementations are as follows:
